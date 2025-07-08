@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Divytosh Upadhyay | Portfolio</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      background: linear-gradient(to right, #111, #1f1f1f);
+    }
+
+    .profile-pic {
+      width: 140px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+
+    p.tagline {
+      font-size: 1.2em;
+      color: #00e5ff;
+    }
+
+    .btn {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      background-color: #00bcd4;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+    }
+
+    section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2em;
+      margin-bottom: 20px;
+      color: #00e5ff;
+    }
+
+    .skills-grid, .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 20px;
+    }
+
+    .skills-grid div, .project-card {
+      background-color: #1a1a1a;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #333;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+    }
+
+    input, textarea {
+      padding: 10px;
+      background: #222;
+      border: 1px solid #444;
+      color: #fff;
+      border-radius: 4px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: #00bcd4;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #111;
+      color: #aaa;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="profile.jpg" alt="Profile" class="profile-pic">
+    <h1>Divytosh Upadhyay</h1>
+    <p class="tagline">Aspiring Data Analyst | AI & Data Science Enthusiast</p>
+    <a href="#projects" class="btn">View Portfolio</a>
+    <a href="resume.pdf" class="btn" download = "MyResume">Download Resume</a>
+    <a href="#contact" class="btn">Contact Me</a>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am a dedicated and enthusiastic individual currently pursuing a Bachelor of Technology (B.Tech) in Artificial Intelligence and Data Science from GGSIPU (2023–2027). I have a keen interest in data analysis, machine learning, and building AI-driven solutions that address real-world problems.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div>Python</div>
+      <div>SQL</div>
+      <div>Power BI</div>
+      <div>Machine Learning</div>
+      <div>MS Excel</div>
+      <div>Java (OOP)</div>
+      <div>DSA (C, Python)</div>
+      <div>Data Analysis</div>
+      <div>Tableau</div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <h3>USA Sales Dashboard</h3>
+        <a href="usa_sales_dashboard.png" target="_blank"><img src="usa-sales.jpg" alt="USA Sales Dashboard" style="width:100%;border-radius:6px;"></a>
+        <p>Regional sales analytics and trends using Power BI.</p>
+      </div>
+      <div class="project-card">
+        <h3>Flipkart E-Commerce Data Insights</h3>
+        <a href="flipkart.jpg" target="_blank"><img src="flipkart.jpg" alt="Flipkart E-Commerce Data Insights" style="width:100%;border-radius:6px;"></a>
+        <p>Visualizing rides, distance, and pricing insights.</p>
+      </div>
+      <div class="project-card">
+        <h3>AMAZON Sales Analysis</h3>
+        <a href="amazon.jpg" target="_blank"><img src="amazon.jpg" alt="AMAZON Sales Analysis" style="width:100%;border-radius:6px;"></a>
+        <p>E-commerce product/category performance dashboard.</p>
+      </div>
+      <div class="project-card">
+        <h3>SheGuard AI</h3>
+        <a href="https://colab.research.google.com/drive/17b5lqJJiP9WBVX_bwOV7wocAItIvEtIh?usp=sharing" target="_blank">Colab Notebook</a>
+        <p>AI-based women safety project using ML & computer vision.</p>
+      </div>
+      <div class="project-card">
+        <h3>Cancer Detection</h3>
+        <p>ML classification model for healthcare prediction.</p>
+      </div>
+      <div class="project-card">
+        <h3>HR Analytics Dashboard</h3>
+        <a href="hr_analytics.jpg" target="_blank"><img src="hr.jpg" alt="HR Analytics Dashboard" style="width:100%;border-radius:6px;"></a>
+        <p>Attrition and employee satisfaction metrics.</p>
+      </div>
+      <div class="project-card">
+        <h3>Customer Complaint Dashboard</h3>
+        <a href="customer.jpg" target="_blank"><img src="customer.jpg" alt="Customer Complaint Dashboard" style="width:100%;border-radius:6px;"></a>
+        <p>Analyzing complaint sources and frequency.</p>
+      </div>
+      <div class="project-card">
+        <h3>IPL Dashboard</h3>
+        <a href="ipl.jpg" target="_blank"><img src="ipl.jpg" alt="IPL Dashboard" style="width:100%;border-radius:6px;"></a>
+        <p>Sports analytics dashboard for match & player stats.</p>
+      </div>
+      <div class="project-card">
+        <h3>Corprate health survey 2023</h3>
+        <a href="corporate_health.jpg" target="_blank"><img src="corporate.jpg" alt="Corporate Health Survey 2023" style="width:100%;border-radius:6px;"></a>
+        <p>Analyze employee wellness trends and key organizational insights.</p>
+      </div>
+      <div class="project-card">
+        <h3>Netflix Analysis Summary</h3>
+        <a href="netflix.jpg" target="_blank"><img src="netflix.jpg" alt="Netflix Analysis Summary" style="width:100%;border-radius:6px;"></a>
+        <p>Created a comprehensive netflix data analysis summary highlighting user behaviour, viewing trends and content performance insights.</p>
+      </div>
+      <div class="project-card">
+        <h3>TRafic Pattern Analysis</h3>
+        <a href="traffic.jpg" target="_blank"><img src="traffic.jpg" alt="Traffic Pattern Analysis" style="width:100%;border-radius:6px;"></a>
+        <p>Conducted traffic pattern analysis to identify peak hours, congestion trends and optimize route efficiency.</p>
+      </div>
+      <div class="project-card">
+        <h3>Student Performance</h3>
+        <a href="student.jpg" target="_blank"><img src="student.jpg" alt="Student Performance" style="width:100%;border-radius:6px;"></a>
+        <p>Analyzed student performance data to uncover academic trends and identify areas for improvement.</p>
+      </div>
+      <div class="project-card">
+        <h3>Covid 19 / INDIA</h3>
+        <a href="covid.jpg" target="_blank"><img src="covid.jpg" alt="Covid 19 / INDIA" style="width:100%;border-radius:6px;"></a>
+        <p>Performed COVID-19 data analysis for India to track case trends, recovery rate and regional impact.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <h2>Services</h2>
+    <p>
+      I offer professional data analysis services including dashboard creation, insight generation, and report building using tools like Power BI, Python, Excel, and SQL.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="73ca5ec9-dce7-4778-ad2b-6be1a129db47">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
+      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+      <button type="submit">Send Message</button>
+    </form>
+    <div id="form-success" style="display:none;color:#00e676;margin-top:15px;text-align:center;font-weight:bold;">Thank you! Your message has been sent.</div>
+    <script>
+      document.getElementById('contactForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var form = this;
+        var formData = new FormData(form);
+        fetch(form.action, {
+          method: form.method,
+          body: formData
+        })
+        .then(response => {
+          if (response.ok) {
+            form.reset();
+            document.getElementById('form-success').style.display = 'block';
+          } else {
+            alert('There was an error sending your message. Please try again.');
+          }
+        })
+        .catch(() => {
+          alert('There was an error sending your message. Please try again.');
+        });
+      });
+    </script>
+    <p>Email: <a href="mailto:divyatoshupadhyay@gmail.com">divyatoshupadhyay@gmail.com</a></p>
+    <p>GitHub: <a href="https://github.com/Divya-techie-cmd" target="_blank">https://github.com/Divya-techie-cmd</a></p>
+    <p>Linkedin: <a href="https://www.linkedin.com/in/divytosh-upadhyay-250387290" target="_blank">https://www.linkedin.com/in/divytosh-upadhyay-250387290</a></p>
+    <p>Phone: <a href="tel:+917052110311">+91 7052110311</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Divytosh Upadhyay. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
