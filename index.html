@@ -8,21 +8,42 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #0a0a0a;
-      color: #e0e0e0;
+      background-image: url('background.png');
+      background-size: cover;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      color: #ffffff;
       line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .animated {
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
     }
 
     header {
       text-align: center;
       padding: 60px 20px 40px;
-      background: linear-gradient(to right, #111, #1f1f1f);
+      background: rgba(0, 0, 0, 0.8);
     }
 
     .profile-pic {
       width: 140px;
       border-radius: 50%;
       margin-bottom: 20px;
+      border: 4px solid #00e5ff;
     }
 
     h1 {
@@ -49,6 +70,9 @@
       padding: 40px 20px;
       max-width: 1000px;
       margin: auto;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 12px;
+      margin-bottom: 40px;
     }
 
     h2 {
@@ -57,18 +81,30 @@
       color: #00e5ff;
     }
 
-    .skills-grid, .project-grid {
+    .skills-grid, .project-grid, .cert-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
       gap: 20px;
     }
 
-    .skills-grid div, .project-card {
-      background-color: #1a1a1a;
+    .skills-grid div,
+    .project-card,
+    .cert-card {
+      background-color: rgba(255, 255, 255, 0.1);
       padding: 15px;
       border-radius: 8px;
-      border: 1px solid #333;
+      border: 1px solid rgba(255, 255, 255, 0.15);
       text-align: center;
+      animation: fadeInUp 1s ease forwards;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .skills-grid div:hover,
+    .project-card:hover,
+    .cert-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 229, 255, 0.3);
     }
 
     form {
@@ -80,7 +116,7 @@
 
     input, textarea {
       padding: 10px;
-      background: #222;
+      background: rgba(255, 255, 255, 0.05);
       border: 1px solid #444;
       color: #fff;
       border-radius: 4px;
@@ -98,163 +134,134 @@
     footer {
       text-align: center;
       padding: 20px;
-      background-color: #111;
+      background-color: rgba(0, 0, 0, 0.8);
       color: #aaa;
+    }
+
+    a {
+      color: #00e5ff;
+      text-decoration: none;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <img src="profile.jpg" alt="Profile" class="profile-pic">
+  <header class="animated">
+    <img src="Unknown.jpeg" alt="Profile" class="profile-pic">
     <h1>Divytosh Upadhyay</h1>
-    <p class="tagline">Aspiring Data Analyst | AI & Data Science Enthusiast</p>
+    <p class="tagline">Data Analyst | AI & Data Science Enthusiast</p>
     <a href="#projects" class="btn">View Portfolio</a>
-    <a href="resume.pdf" class="btn" download = "MyResume">Download Resume</a>
+    <a href="/Users/divytoshupadhyaymac/Desktop/WEB/Divytosh_Data_Analyst_resume .pdf" class="btn" download>Download Resume</a>
     <a href="#contact" class="btn">Contact Me</a>
   </header>
 
-  <section id="about">
+  <section id="about" class="animated">
     <h2>About Me</h2>
     <p>
-      I am a dedicated and enthusiastic individual currently pursuing a Bachelor of Technology (B.Tech) in Artificial Intelligence and Data Science from GGSIPU (2023–2027). I have a keen interest in data analysis, machine learning, and building AI-driven solutions that address real-world problems.
+      I am currently pursuing a B.Tech in Artificial Intelligence and Data Science from GGSIPU (2023–2027), with a CGPA of 8.48 (Semester IV). I'm passionate about transforming raw data into meaningful insights using tools like Python, SQL, Power BI, and Tableau. I'm actively exploring AI-driven solutions and real-world analytics.
     </p>
   </section>
+<section id="skills" class="animated">
+  <h2>Skills</h2>
+  <div class="cert-grid">
+    <div class="cert-card skill-card">
+      <p>Python <span>90%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 90%; background: linear-gradient(to right, #00ff99, #00e5ff);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>SQL <span>85%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 85%; background: linear-gradient(to right, #00e5ff, #00bcd4);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>Power BI <span>80%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 80%; background: linear-gradient(to right, #00c3ff, #0099ff);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>Excel <span>85%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 85%; background: linear-gradient(to right, #00e5ff, #00bcd4);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>Machine Learning <span>75%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 75%; background: linear-gradient(to right, #33ccff, #0066ff);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>Tableau <span>70%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 70%; background: linear-gradient(to right, #33aaff, #0044cc);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>Web Scraping <span>80%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 80%; background: linear-gradient(to right, #00c3ff, #0099ff);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>MySQL <span>75%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 75%; background: linear-gradient(to right, #33ccff, #0066ff);"></div></div>
+    </div>
+    <div class="cert-card skill-card">
+      <p>DSA (C, Python) <span>70%</span></p>
+      <div class="skill-bar"><div class="skill-fill" style="width: 70%; background: linear-gradient(to right, #33aaff, #0044cc);"></div></div>
+    </div>
+  </div>
+</section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <div>Python</div>
-      <div>SQL</div>
-      <div>Power BI</div>
-      <div>Machine Learning</div>
-      <div>MS Excel</div>
-      <div>Java (OOP)</div>
-      <div>DSA (C, Python)</div>
-      <div>Data Analysis</div>
-      <div>Tableau</div>
+
+  <section id="certifications" class="animated">
+    <h2>Certifications</h2>
+    <div class="cert-grid">
+      <div class="cert-card"><p><a href="CISCO.png" target="_blank">Cisco: Introduction to Data Science</a></p></div>
+      <div class="cert-card"><p><a href="INTRODUCTION TO MS EXCEL.png" target="_blank">Simplilearn: Introduction :-  MS Excel </a></p></div>
+      <div class="cert-card"><p><a href="DATA ANALYST EXCEL .png" target="_blank">Simplilearn: Data Analyst 101 :- MS Excel Formulas & Functions</a></p></div>
+      <div class="cert-card"><p><a href="POWER BI.png" target="_blank">Simplilearn:Microsoft Learn Power BI Basics</a></p></div>
+      <div class="cert-card"><p><a href="DELOITTE  JOB.png" target="_blank">Deloitte Virtual Internship (Forage)</a></p></div>
+      <div class="cert-card"><p><a href="ACM.png" target="_blank">Acme Grade: Netflix Data Analysis</a></p></div>
+      <div class="cert-card"><p><a href="DTC.png" target="_blank">GDSC Workshop – Google Developer Clubs</a></p></div>
+      <div class="cert-card"><p><a href="HACKTHON.png" target="_blank">Hack the Mountain – Marwadi University</a></p></div>
+      <div class="cert-card"><p><a href="images:cert8.png" target="_blank">Tamizan Skills – Internship Program </a></p></div>
+      
     </div>
   </section>
 
-  <section id="projects">
+  <section id="projects" class="animated">
     <h2>Projects</h2>
     <div class="project-grid">
-      <div class="project-card">
-        <h3>USA Sales Dashboard</h3>
-        <a href="usa_sales_dashboard.png" target="_blank"><img src="usa-sales.jpg" alt="USA Sales Dashboard" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Regional sales analytics and trends using Power BI.</p>
-      </div>
-      <div class="project-card">
-        <h3>Flipkart E-Commerce Data Insights</h3>
-        <a href="flipkart.jpg" target="_blank"><img src="flipkart.jpg" alt="Flipkart E-Commerce Data Insights" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Visualizing rides, distance, and pricing insights.</p>
-      </div>
-      <div class="project-card">
-        <h3>AMAZON Sales Analysis</h3>
-        <a href="amazon.jpg" target="_blank"><img src="amazon.jpg" alt="AMAZON Sales Analysis" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>E-commerce product/category performance dashboard.</p>
-      </div>
-      <div class="project-card">
-        <h3>SheGuard AI</h3>
-        <a href="https://colab.research.google.com/drive/17b5lqJJiP9WBVX_bwOV7wocAItIvEtIh?usp=sharing" target="_blank">Colab Notebook</a>
-        <p>AI-based women safety project using ML & computer vision.</p>
-      </div>
-      <div class="project-card">
-        <h3>Cancer Detection</h3>
-        <p>ML classification model for healthcare prediction.</p>
-      </div>
-      <div class="project-card">
-        <h3>HR Analytics Dashboard</h3>
-        <a href="hr_analytics.jpg" target="_blank"><img src="hr.jpg" alt="HR Analytics Dashboard" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Attrition and employee satisfaction metrics.</p>
-      </div>
-      <div class="project-card">
-        <h3>Customer Complaint Dashboard</h3>
-        <a href="customer.jpg" target="_blank"><img src="customer.jpg" alt="Customer Complaint Dashboard" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Analyzing complaint sources and frequency.</p>
-      </div>
-      <div class="project-card">
-        <h3>IPL Dashboard</h3>
-        <a href="ipl.jpg" target="_blank"><img src="ipl.jpg" alt="IPL Dashboard" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Sports analytics dashboard for match & player stats.</p>
-      </div>
-      <div class="project-card">
-        <h3>Corprate health survey 2023</h3>
-        <a href="corporate_health.jpg" target="_blank"><img src="corporate.jpg" alt="Corporate Health Survey 2023" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Analyze employee wellness trends and key organizational insights.</p>
-      </div>
-      <div class="project-card">
-        <h3>Netflix Analysis Summary</h3>
-        <a href="netflix.jpg" target="_blank"><img src="netflix.jpg" alt="Netflix Analysis Summary" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Created a comprehensive netflix data analysis summary highlighting user behaviour, viewing trends and content performance insights.</p>
-      </div>
-      <div class="project-card">
-        <h3>TRafic Pattern Analysis</h3>
-        <a href="traffic.jpg" target="_blank"><img src="traffic.jpg" alt="Traffic Pattern Analysis" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Conducted traffic pattern analysis to identify peak hours, congestion trends and optimize route efficiency.</p>
-      </div>
-      <div class="project-card">
-        <h3>Student Performance</h3>
-        <a href="student.jpg" target="_blank"><img src="student.jpg" alt="Student Performance" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Analyzed student performance data to uncover academic trends and identify areas for improvement.</p>
-      </div>
-      <div class="project-card">
-        <h3>Covid 19 / INDIA</h3>
-        <a href="covid.jpg" target="_blank"><img src="covid.jpg" alt="Covid 19 / INDIA" style="width:100%;border-radius:6px;" loading="lazy" decoding="async"></a>
-        <p>Performed COVID-19 data analysis for India to track case trends, recovery rate and regional impact.</p>
-      </div>
+      <div class="project-card"><h3>USA Sales Dashboard</h3><a href="USA SALE.png" alt="USA SALE"><p>Regional sales analytics using Power BI.</p></a></div>
+      <div class="project-card"><h3>Flipkart Data Insights</h3><a href="FLIPKART.png" alt="USA SALE">
+<p>Customer behavior & pricing trends analysis.</p></a></div>
+      <div class="project-card"><h3>Amazon Sales Analysis</h3><a href="amzon.png" alt="USA SALE">
+<p>E Commerce performance dashboard.</p></a></div>
+      <div class="project-card"><h3>SheGuard AI</h3><a href="https://colab.research.google.com/drive/17b5lqJJiP9WBVX_bwOV7wocAItIvEtIh?usp=sharing">
+<p>AI-based women's safety app (ML + CV).</a></p></div>
+      <div class="project-card"><h3>Cancer Detection</h3><p>ML classification model for early prediction.</p></div>
+      <div class="project-card"><h3>HR Analytics</h3><a href="Screenshot1.png" alt="HR ANALYTICS"><p>Attrition and employee satisfaction dashboard.</p></a></div>
+      <div class="project-card"><h3>Customer Complaint Dashboard</h3> <a href="CUSTOMER .png"> <p>Insights on complaint frequency & channels.</p></a></div>
+      <div class="project-card"><h3>IPL Dashboard</h3><a href="Unknown-1.jpeg" ><p>Sports analytics for players and teams.</p></a></div>
+      <div class="project-card"><h3>Corporate Health Survey</h3> <a href="CORPORATE .png" > <p>Employee wellness trends & insights.</p></a></div>
+      <div class="project-card"><h3>Netflix Summary</h3><a href="NETFLIX.png" alt="HR ANALYTICS"><p>User behavior, trends, and content insights.</p></a></div>
+      <div class="project-card"><h3>Traffic Pattern Analysis</h3><a href="traffica .png" alt="HR ANALYTICS"<p>Peak hour and congestion insights.</p></a></div>
+      <div class="project-card"><h3>Student Performance</h3><a href="STUDENT .png" alt="HR ANALYTICS"><p>Academic trends and improvements.</p></a></div>
+      <div class="project-card"><h3>COVID-19 India</h3><a href="COVID .png" alt="HR ANALYTICS"><p>Case analysis and regional impact tracking.</p></a></div>
+      <div class="project-card"><h3>Customer Segmentation </h3><a href="CUSTOMER SEGMENTATION USING K - MEANS " alt="HR ANALYTICS"><p>Customer Segmentation Using K-Means.</p></a></div>
+      <div class="project-card"><h3>Sales Forecasting </h3><a href="sales forecasting with linear regression " alt="HR ANALYTICS"><p>Forecasting with linear regression.</p></a></div>
+
     </div>
   </section>
 
-  <section id="services">
+  <section id="services" class="animated">
     <h2>Services</h2>
     <p>
-      I offer professional data analysis services including dashboard creation, insight generation, and report building using tools like Power BI, Python, Excel, and SQL.
+      I offer professional services in data analytics, dashboard development, and reporting using Excel, Python, SQL, Power BI, and Tableau. Let’s convert your data into decisions.
     </p>
   </section>
 
-  <section id="contact">
-    <h2>Contact Me</h2>
-    <form id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-      <input type="hidden" name="access_key" value="73ca5ec9-dce7-4778-ad2b-6be1a129db47">
-      <input type="text" name="name" placeholder="Your Name" required />
-      <input type="email" name="email" placeholder="Your Email" required />
-      <textarea name="message" placeholder="Your Message" rows="4" required></textarea>
-      <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-      <button type="submit">Send Message</button>
-    </form>
-    <div id="form-success" style="display:none;color:#00e676;margin-top:15px;text-align:center;font-weight:bold;">Thank you! Your message has been sent.</div>
-    <script>
-      document.getElementById('contactForm').addEventListener('submit', function(e) {
-        e.preventDefault();
-        var form = this;
-        var formData = new FormData(form);
-        fetch(form.action, {
-          method: form.method,
-          body: formData
-        })
-        .then(response => {
-          if (response.ok) {
-            form.reset();
-            document.getElementById('form-success').style.display = 'block';
-          } else {
-            alert('There was an error sending your message. Please try again.');
-          }
-        })
-        .catch(() => {
-          alert('There was an error sending your message. Please try again.');
-        });
-      });
-    </script>
-    <p>Email: <a href="mailto:divyatoshupadhyay@gmail.com">divyatoshupadhyay@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Divya-techie-cmd" target="_blank">https://github.com/Divya-techie-cmd</a></p>
-    <p>Linkedin: <a href="https://www.linkedin.com/in/divytosh-upadhyay-250387290" target="_blank">https://www.linkedin.com/in/divytosh-upadhyay-250387290</a></p>
-    <p>Phone: <a href="tel:+917052110311">+91 7052110311</a></p>
-  </section>
+  <section id="contact" class="animated">
+  <h2>Contact Me</h2>
+  <p>Email: <a href="mailto:divyatoshupadhyay@gmail.com">divyatoshupadhyay@gmail.com</a></p>
+  <p>Phone: <a href="tel:+917052110311">+91 7052110311</a></p>
+  <p>GitHub: <a href="https://github.com/Divya-techie-cmd" target="_blank">github.com/Divya-techie-cmd</a></p>
+  <p>LinkedIn: <a href="https://linkedin.com/in/divytosh-upadhyay" target="_blank">linkedin.com/in/divytosh-upadhyay</a></p>
+</section>
 
-  <footer>
+
+  <footer class="animated">
     <p>&copy; 2025 Divytosh Upadhyay. All rights reserved.</p>
   </footer>
-
 </body>
 </html>
